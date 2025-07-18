@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UET Lahore Admissions</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f9fc;
+      color: #333;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 15px 30px;
+      font-size: 22px;
+      font-weight: 500;
+    }
+
+    .container {
+      display: flex;
+      padding: 40px;
+      gap: 40px;
+    }
+
+    .left {
+      flex: 2;
+    }
+
+    .right {
+      flex: 1;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #003366;
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 10px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      background-color: #004aad;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #003399;
+    }
+
+    .note {
+      font-size: 14px;
+      background-color: #f0f0f0;
+      padding: 10px;
+      margin-top: 20px;
+      border-radius: 6px;
+    }
+
+    .note a {
+      color: #004aad;
+      text-decoration: none;
+    }
+
+    .prank-screen {
+      display: none;
+      width: 100%;
+      height: 60vh;
+      font-size: 50px;
+      text-align: center;
+      padding-top: 80px;
+      color: red;
+      background: white;
+      border-radius: 8px;
+      animation: fadeIn 0.6s ease-in;
+    }
+
+    .prank-message {
+      font-size: 28px;
+      color: #003366;
+      margin-top: 20px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  Admissions UET
+</header>
+
+<div class="container">
+  <div class="left">
+    <h2>Welcome to UET Lahore Admissions</h2>
+    <p>University of Engineering and Technology (UET) Lahore invites applications for undergraduate admissions. Join Pakistan's leading engineering university and become part of a community dedicated to innovation, excellence, and leadership.</p>
+
+    <ul style="margin-top: 20px; list-style: none; padding-left: 0;">
+      <li>📍 <b>World-class Faculty & Facilities</b></li>
+      <li>🔬 State-of-the-art Laboratories & Research Centers</li>
+      <li>🎓 Diverse & Dynamic Campus Life</li>
+      <li>🏢 Strong Industry Linkages & Job Opportunities</li>
+    </ul>
+
+    <p style="margin-top: 20px;">For assistance, please contact our admissions office:<br>
+    <b>Email:</b> admission@uet.edu.pk<br>
+    <b>Phone:</b> +92 42 99029216</p>
+  </div>
+
+  <div class="right" id="form-section">
+    <h2>Login</h2>
+    <input type="text" id="cnic" placeholder="CNIC">
+    <input type="text" id="challan" placeholder="Challan Number">
+    <button onclick="prankUser()">Login</button>
+    <div class="note">
+      Don't have a Challan Number?<br>
+      Please proceed to <a href="#">Step 1: Challan Generation</a> to begin your application process.
+    </div>
+  </div>
+
+  <div class="right prank-screen" id="prank-section">
+    🖕
+    <div class="prank-message">Bari jaldi ha tujhe!</div>
+  </div>
+</div>
+
+<script>
+  function prankUser() {
+    const cnic = document.getElementById("cnic").value.trim();
+    const challan = document.getElementById("challan").value.trim();
+
+    if (cnic === "" || challan === "") {
+      alert("Please enter both CNIC and Challan Number.");
+      return;
+    }
+
+    // Switch to prank view
+    document.getElementById("form-section").style.display = "none";
+    document.getElementById("prank-section").style.display = "block";
+  }
+</script>
+
+</body>
+</html>
